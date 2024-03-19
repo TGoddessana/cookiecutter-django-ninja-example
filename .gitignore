@@ -274,3 +274,6 @@ dump.rdb
 cookiecutter_django_ninja_example/media/
 
 .pytest_cache/
+
+# PyCharm files
+.idea
