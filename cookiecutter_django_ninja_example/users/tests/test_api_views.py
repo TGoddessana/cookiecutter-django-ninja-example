@@ -15,6 +15,8 @@ class TestUserAPI:
 
         assert response.json() == {
             "username": user.username,
+            # note that drf creates urls with `testserver`,
+            # but django-ninja uses `testlocation`
             "url": f"http://testlocation/api/users/{user.username}/",
             "name": user.name,
         }
