@@ -26,10 +26,7 @@ def user_list(request):
 
 @users_router.get("{username}/", response=UserSchema, url_name="user-detail")
 def user_detail(request, username: str):
-    try:
-        return User.objects.get(username=username)
-    except User.DoesNotExist as exc:
-        raise HttpError(404, "User not found") from exc
+    return get_object_or_404(User, username=username)
 
 
 @users_router.put("{username}/", response=UserSchema, url_name="user-update")
