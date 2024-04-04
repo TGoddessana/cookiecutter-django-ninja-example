@@ -2,6 +2,13 @@
 
 in example project for including django-ninja to cookiecutter-django. reproduces DRF endpoints in cookiecutter-django template.
 
+## For more information to include django-ninja in cookiecutter-django
+
+1. see the [discussion in cookiecutter-django issue:](https://github.com/cookiecutter/cookiecutter-django/issues/4923)
+and feel free to contribute to the issue.
+
+2. check [which files are changed in this project to include django-ninja in cookiecutter-django.](https://github.com/TGoddessana/cookiecutter_django_ninja_example/pull/1/files#diff-ae8f68a11766be0eaa8ff041845c8381ac4a3a8b881c226c63bb36eaad2ac19b)
+
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 

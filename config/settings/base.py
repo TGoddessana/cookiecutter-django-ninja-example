@@ -83,10 +83,7 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.mfa",
     "allauth.socialaccount",
-    "rest_framework",
-    "rest_framework.authtoken",
     "corsheaders",
-    "drf_spectacular",
 ]
 
 LOCAL_APPS = [
@@ -99,7 +96,9 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # MIGRATIONS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
-MIGRATION_MODULES = {"sites": "cookiecutter_django_ninja_example.contrib.sites.migrations"}
+MIGRATION_MODULES = {
+    "sites": "cookiecutter_django_ninja_example.contrib.sites.migrations",
+}
 
 # AUTHENTICATION
 # ------------------------------------------------------------------------------
@@ -279,34 +278,17 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 # https://docs.allauth.org/en/latest/account/configuration.html
 ACCOUNT_ADAPTER = "cookiecutter_django_ninja_example.users.adapters.AccountAdapter"
 # https://docs.allauth.org/en/latest/account/forms.html
-ACCOUNT_FORMS = {"signup": "cookiecutter_django_ninja_example.users.forms.UserSignupForm"}
+ACCOUNT_FORMS = {
+    "signup": "cookiecutter_django_ninja_example.users.forms.UserSignupForm",
+}
 # https://docs.allauth.org/en/latest/socialaccount/configuration.html
-SOCIALACCOUNT_ADAPTER = "cookiecutter_django_ninja_example.users.adapters.SocialAccountAdapter"
+SOCIALACCOUNT_ADAPTER = (
+    "cookiecutter_django_ninja_example.users.adapters.SocialAccountAdapter"
+)
 # https://docs.allauth.org/en/latest/socialaccount/configuration.html
-SOCIALACCOUNT_FORMS = {"signup": "cookiecutter_django_ninja_example.users.forms.UserSocialSignupForm"}
-
-# django-rest-framework
-# -------------------------------------------------------------------------------
-# django-rest-framework - https://www.django-rest-framework.org/api-guide/settings/
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication",
-    ),
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
-    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+SOCIALACCOUNT_FORMS = {
+    "signup": "cookiecutter_django_ninja_example.users.forms.UserSocialSignupForm",
 }
 
 # django-cors-headers - https://github.com/adamchainz/django-cors-headers#setup
 CORS_URLS_REGEX = r"^/api/.*$"
-
-# By Default swagger ui is available only to admin user(s). You can change permission classes to change that
-# See more configuration options at https://drf-spectacular.readthedocs.io/en/latest/settings.html#settings
-SPECTACULAR_SETTINGS = {
-    "TITLE": "cookiecutter-django-ninja-example API",
-    "DESCRIPTION": "Documentation of API endpoints of cookiecutter-django-ninja-example",
-    "VERSION": "1.0.0",
-    "SERVE_PERMISSIONS": ["rest_framework.permissions.IsAdminUser"],
-}
-# Your stuff...
-# ------------------------------------------------------------------------------
